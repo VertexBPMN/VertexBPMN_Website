@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VertexBPMN™ - High-Performance Process Automation for .NET</title>
+    <meta name="description" content="VertexBPMN ist eine moderne, hochperformante BPMN 2.0 & DMN 1.4 Engine für .NET, entwickelt für maximale Skalierbarkeit und eine erstklassige Entwicklererfahrung.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #0D47A1; /* Tiefes Blau */
+            --color-secondary: #4CAF50; /* Lebhaftes Grün */
+            --color-dark: #212121;
+            --color-light: #FAFAFA;
+            --color-text: #424242;
+            --container-width: 1140px;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--color-light);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: #ffffff;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: 800;
+            font-size: 24px;
+            color: var(--color-dark);
+            text-decoration: none;
+        }
+        .logo img {
+            height: 40px;
+            margin-right: 12px;
+        }
+
+        .nav-menu a {
+            color: var(--color-text);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        .nav-menu a:hover {
+            color: var(--color-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(45deg, var(--color-primary), #1976D2);
+            color: white;
+            padding: 180px 0 120px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        .hero .slogan {
+            font-size: 22px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-button {
+            background-color: var(--color-secondary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #388E3C;
+        }
+
+        /* Sektionen Allgemein */
+        section {
+            padding: 80px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            font-weight: 800;
+            color: var(--color-dark);
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .feature-card h3 {
+            color: var(--color-primary);
+            margin-top: 0;
+        }
+        .feature-card .icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: var(--color-secondary);
+        }
+
+        /* Produkte & Services */
+        .products, .services {
+            background-color: #ffffff;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .content-box h3 {
+            color: var(--color-primary);
+        }
+        .content-box ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .content-box li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        .content-box li::before {
+            content: '✔';
+            color: var(--color-secondary);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            background-color: var(--color-dark);
+            color: white;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 36px;
+        }
+        .cta-section p {
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        .footer-legal {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Responsive Anpassungen */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; } /* Vereinfacht für Mobile, Menü-Button wäre nächster Schritt */
+            .hero h1 { font-size: 36px; }
+            .hero .slogan { font-size: 18px; }
+            .content-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="https://raw.githubusercontent.com/user-attachments/assets/e160a0a9-2545-4202-9856-11f26a1b24e4" alt="VertexBPMN Logo">
+                VertexBPMN™
+            </a>
+            <nav class="nav-menu">
+                <a href="#features">Features</a>
+                <a href="#products">Produkt</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>Orchestrieren. Automatisieren. Skalieren. In .NET.</h1>
+                <p class="slogan">VertexBPMN ist die native BPMN & DMN Engine für maximale .NET-Performance. Wir ermöglichen Unternehmen, komplexe Workflows elegant zu orchestrieren.</p>
+                <a href="#contact" class="cta-button">Jetzt Kontakt aufnehmen</a>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <h2 class="section-title">Warum VertexBPMN?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="icon">⚙️</div>
+                        <h3>BPMN 2.0 & DMN 1.4 Konform</h3>
+                        <p>Unterstützt alle wichtigen BPMN-Elemente und DMN-Entscheidungstabellen für eine standardkonforme Modellierung.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🚀</div>
+                        <h3>Gebaut für .NET 9</h3>
+                        <p>Nutzt modernste C#-Features für maximale Performance, geringe Allokationen und echte Asynchronität.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon">🔗</div>
+                        <h3>Flexible APIs & Integration</h3>
+                        <p>Bietet REST und gRPC für eine einfache Anbindung an Ihre bestehende Systemlandschaft und Microservices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="container">
+                <h2 class="section-title">Unsere Produkte</h2>
+                <div class="content-grid">
+                    <div class="content-box">
+                        <h3>Community Edition</h3>
+                        <p>Die kostenlose Open-Source-Version mit vollem Funktionsumfang und Community-Support. Ideal für den Einstieg, Startups und kleinere Projekte.</p>
+                        <ul>
+                            <li>Vollständige BPMN & DMN Engine</li>
+                            <li>PostgreSQL & SQL Server Support</li>
+                            <li>REST API</li>
+                            <li>Community-Support via GitHub</li>
+                        </ul>
+                    </div>
+                    <div class="content-box">
+                        <h3>Enterprise Edition</h3>
+                        <p>Die kommerzielle, für den Unternehmenseinsatz gehärtete Version. Bietet exklusive Features für kritische Systeme.</p>
+                        <ul>
+                            <li>High-Availability Clustering</li>
+                            <li>Erweiterte Sicherheit (SSO/RBAC)</li>
+                            <li>Visueller Live-Debugger</li>
+                            <li>Premium Monitoring & Analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2 class="section-title">Professionelle Dienstleistungen</h2>
+                <div class="content-grid">
+                     <div class="content-box">
+                        <h3>Consulting & Architektur</h3>
+                        <p>Wir unterstützen Sie bei der strategischen Planung und Integration von VertexBPMN in Ihre Systemlandschaft.</p>
+                    </div>
+                    <div class="content-box">
+                        <h3>Implementierungs-Support</h3>
+                        <p>Unsere Experten helfen Ihrem Team bei der Entwicklung, Optimierung und dem Go-Live Ihrer automatisierten Prozesse.</p>
+                    </div>
+                     <div class="content-box">
+                        <h3>Enterprise Support & SLAs</h3>
+                        <p>Garantierte technische Unterstützung mit Service Level Agreements, um den reibungslosen Betrieb Ihrer kritischen Anwendungen zu sichern.</p>
+                    </div>
+                     <div class="content-box">
+                        <h3>Schulungen & Zertifizierungen</h3>
+                        <p>Offizielle Trainingsprogramme für Entwickler und Architekten zum Aufbau und zur Validierung von Expertenwissen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="cta-section">
+            <div class="container">
+                <h2>Bereit, Ihre Prozesse zu transformieren?</h2>
+                <p>Lassen Sie uns darüber sprechen, wie VertexBPMN Ihr Unternehmen voranbringen kann.</p>
+                <a href="mailto:kontakt@vertexbpmn.com" class="cta-button">Schreiben Sie uns eine E-Mail</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Impressum</a>
+            </div>
+            <div class="footer-legal">
+                <p>&copy; 2025 VertexBPMN. Alle Rechte vorbehalten.</p>
+                <p>VertexBPMN™ ist eine nicht eingetragene Marke von [Dein Name/Deine Firma].</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
