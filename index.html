@@ -1,349 +1,191 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VertexBPMN™ - High-Performance Process Automation for .NET</title>
-    <meta name="description" content="VertexBPMN ist eine moderne, hochperformante BPMN 2.0 & DMN 1.4 Engine für .NET, entwickelt für maximale Skalierbarkeit und eine erstklassige Entwicklererfahrung.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --color-primary: #0D47A1; /* Tiefes Blau */
-            --color-secondary: #4CAF50; /* Lebhaftes Grün */
-            --color-dark: #212121;
-            --color-light: #FAFAFA;
-            --color-text: #424242;
-            --container-width: 1140px;
-        }
-
-        body {
-            font-family: 'Manrope', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: var(--color-light);
-            color: var(--color-text);
-            line-height: 1.6;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            max-width: var(--container-width);
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: #ffffff;
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-weight: 800;
-            font-size: 24px;
-            color: var(--color-dark);
-            text-decoration: none;
-        }
-        .logo img {
-            height: 40px;
-            margin-right: 12px;
-        }
-
-        .nav-menu a {
-            color: var(--color-text);
-            text-decoration: none;
-            margin-left: 30px;
-            font-weight: 700;
-            transition: color 0.3s;
-        }
-        .nav-menu a:hover {
-            color: var(--color-secondary);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(45deg, var(--color-primary), #1976D2);
-            color: white;
-            padding: 180px 0 120px 0;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-        .hero .slogan {
-            font-size: 22px;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .cta-button {
-            background-color: var(--color-secondary);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: background-color 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #388E3C;
-        }
-
-        /* Sektionen Allgemein */
-        section {
-            padding: 80px 0;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-            font-weight: 800;
-            color: var(--color-dark);
-        }
-
-        /* Features Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .feature-card {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        .feature-card h3 {
-            color: var(--color-primary);
-            margin-top: 0;
-        }
-        .feature-card .icon {
-            font-size: 48px;
-            margin-bottom: 15px;
-            color: var(--color-secondary);
-        }
-
-        /* Produkte & Services */
-        .products, .services {
-            background-color: #ffffff;
-        }
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        .content-box h3 {
-            color: var(--color-primary);
-        }
-        .content-box ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .content-box li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 10px;
-        }
-        .content-box li::before {
-            content: '✔';
-            color: var(--color-secondary);
-            position: absolute;
-            left: 0;
-        }
-
-        /* Call to Action Section */
-        .cta-section {
-            background-color: var(--color-dark);
-            color: white;
-            text-align: center;
-        }
-        .cta-section h2 {
-            font-size: 36px;
-        }
-        .cta-section p {
-            margin-bottom: 30px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1a1a1a;
-            color: #ccc;
-            padding: 40px 0;
-            text-align: center;
-        }
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        .footer-legal {
-            margin-top: 20px;
-            font-size: 14px;
-            color: #888;
-        }
-
-        /* Responsive Anpassungen */
-        @media (max-width: 768px) {
-            .nav-menu { display: none; } /* Vereinfacht für Mobile, Menü-Button wäre nächster Schritt */
-            .hero h1 { font-size: 36px; }
-            .hero .slogan { font-size: 18px; }
-            .content-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VertexBPMN – Prozessautomatisierung für .NET 10</title>
+  <meta name="description" content="VertexBPMN ist eine offene Prozessautomatisierungsplattform für .NET 10 mit qualifizierter BPMN-, DMN- und CMMN-Unterstützung, Studio, REST, gRPC, SDK, CLI und Aspire AppHost.">
+  <meta name="theme-color" content="#071a33">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="VertexBPMN – Prozessautomatisierung für .NET 10">
+  <meta property="og:description" content="Modelle ausführen, Entscheidungen automatisieren und Cases steuern – persistent, beobachtbar und cloud-native.">
+  <meta property="og:image" content="https://vertexbpmn.com/assets/Hauptlogo.png">
+  <meta property="og:url" content="https://vertexbpmn.com/">
+  <link rel="canonical" href="https://vertexbpmn.com/">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">
-              <img src="assets/logo.png" alt="VertexBPMN Logo">
-                VertexBPMN™
-            </a>
-            <nav class="nav-menu">
-                <a href="#features">Features</a>
-                <a href="#products">Produkt</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Kontakt</a>
-            </nav>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="#top" aria-label="VertexBPMN Startseite">
+        <img src="assets/logo.png" alt="" width="44" height="44">
+        <span>Vertex<span>BPMN</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="#standards">Standards</a>
+        <a href="#platform">Plattform</a>
+        <a href="#start">Quickstart</a>
+        <a href="https://github.com/VertexBPMN/VertexBPMN/wiki">Dokumentation</a>
+      </nav>
+      <a class="button button-small button-ghost" href="https://github.com/VertexBPMN/VertexBPMN">GitHub</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Open Source · Native .NET 10</p>
+          <h1>Prozesse orchestrieren.<br><strong>Ohne Plattformbruch.</strong></h1>
+          <p class="hero-lead">VertexBPMN verbindet BPMN 2.0, DMN 1.4 und CMMN 1.1 in einer persistenten .NET-Plattform – mit Studio, APIs, SDK, CLI und durchgängiger Observability.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#start">Lokal starten <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="https://github.com/VertexBPMN/VertexBPMN">Quellcode ansehen</a>
+          </div>
+          <div class="hero-badges" aria-label="Technologien">
+            <span>.NET 10</span>
+            <span>REST + gRPC</span>
+            <span>OpenTelemetry</span>
+            <span>Apache 2.0</span>
+          </div>
         </div>
-    </header>
 
-    <main>
-        <section class="hero" id="home">
-            <div class="container">
-                <h1>Orchestrieren. Automatisieren. Skalieren. In .NET.</h1>
-                <p class="slogan">VertexBPMN ist die native BPMN & DMN Engine für maximale .NET-Performance. Wir ermöglichen Unternehmen, komplexe Workflows elegant zu orchestrieren.</p>
-                <a href="#contact" class="cta-button">Jetzt Kontakt aufnehmen</a>
+        <div class="runtime-card" aria-label="VertexBPMN Laufzeittopologie">
+          <div class="runtime-header">
+            <span class="status-dot"></span>
+            <span>VertexBPMN.AppHost</span>
+            <span class="runtime-state">healthy</span>
+          </div>
+          <div class="runtime-flow">
+            <div class="runtime-node runtime-node-accent">
+              <span class="node-icon">◆</span>
+              <span><strong>Studio</strong><small>Model · inspect · operate</small></span>
+              <span class="node-state">ready</span>
             </div>
-        </section>
-
-        <section id="features">
-            <div class="container">
-                <h2 class="section-title">Warum VertexBPMN?</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="icon">⚙️</div>
-                        <h3>BPMN 2.0 & DMN 1.4 Konform</h3>
-                        <p>Unterstützt alle wichtigen BPMN-Elemente und DMN-Entscheidungstabellen für eine standardkonforme Modellierung.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">🚀</div>
-                        <h3>Gebaut für .NET 9</h3>
-                        <p>Nutzt modernste C#-Features für maximale Performance, geringe Allokationen und echte Asynchronität.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="icon">🔗</div>
-                        <h3>Flexible APIs & Integration</h3>
-                        <p>Bietet REST und gRPC für eine einfache Anbindung an Ihre bestehende Systemlandschaft und Microservices.</p>
-                    </div>
-                </div>
+            <div class="flow-line"><span></span></div>
+            <div class="runtime-node">
+              <span class="node-icon">⌁</span>
+              <span><strong>API + Engine</strong><small>BPMN · DMN · CMMN</small></span>
+              <span class="node-state">ready</span>
             </div>
-        </section>
-
-        <section id="products" class="products">
-            <div class="container">
-                <h2 class="section-title">Unsere Produkte</h2>
-                <div class="content-grid">
-                    <div class="content-box">
-                        <h3>Community Edition</h3>
-                        <p>Die kostenlose Open-Source-Version mit vollem Funktionsumfang und Community-Support. Ideal für den Einstieg, Startups und kleinere Projekte.</p>
-                        <ul>
-                            <li>Vollständige BPMN & DMN Engine</li>
-                            <li>PostgreSQL & SQL Server Support</li>
-                            <li>REST API</li>
-                            <li>Community-Support via GitHub</li>
-                        </ul>
-                    </div>
-                    <div class="content-box">
-                        <h3>Enterprise Edition</h3>
-                        <p>Die kommerzielle, für den Unternehmenseinsatz gehärtete Version. Bietet exklusive Features für kritische Systeme.</p>
-                        <ul>
-                            <li>High-Availability Clustering</li>
-                            <li>Erweiterte Sicherheit (SSO/RBAC)</li>
-                            <li>Visueller Live-Debugger</li>
-                            <li>Premium Monitoring & Analytics</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="flow-split"><span></span><span></span></div>
+            <div class="runtime-bottom">
+              <div class="runtime-node compact"><span class="node-icon">▤</span><span><strong>PostgreSQL</strong><small>persistent state</small></span></div>
+              <div class="runtime-node compact"><span class="node-icon">⇄</span><span><strong>RabbitMQ</strong><small>reliable delivery</small></span></div>
             </div>
-        </section>
-
-        <section id="services">
-            <div class="container">
-                <h2 class="section-title">Professionelle Dienstleistungen</h2>
-                <div class="content-grid">
-                     <div class="content-box">
-                        <h3>Consulting & Architektur</h3>
-                        <p>Wir unterstützen Sie bei der strategischen Planung und Integration von VertexBPMN in Ihre Systemlandschaft.</p>
-                    </div>
-                    <div class="content-box">
-                        <h3>Implementierungs-Support</h3>
-                        <p>Unsere Experten helfen Ihrem Team bei der Entwicklung, Optimierung und dem Go-Live Ihrer automatisierten Prozesse.</p>
-                    </div>
-                     <div class="content-box">
-                        <h3>Enterprise Support & SLAs</h3>
-                        <p>Garantierte technische Unterstützung mit Service Level Agreements, um den reibungslosen Betrieb Ihrer kritischen Anwendungen zu sichern.</p>
-                    </div>
-                     <div class="content-box">
-                        <h3>Schulungen & Zertifizierungen</h3>
-                        <p>Offizielle Trainingsprogramme für Entwickler und Architekten zum Aufbau und zur Validierung von Expertenwissen.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="cta-section">
-            <div class="container">
-                <h2>Bereit, Ihre Prozesse zu transformieren?</h2>
-                <p>Lassen Sie uns darüber sprechen, wie VertexBPMN Ihr Unternehmen voranbringen kann.</p>
-                <a href="mailto:kontakt@vertexbpmn.com" class="cta-button">Schreiben Sie uns eine E-Mail</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="https://github.com/VertexBPMN" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/company/vertexbpmn" target="_blank">LinkedIn</a>
-                <a href="/impressum.html">Impressum</a>
-            </div>
-            <div class="footer-legal">
-                <p>&copy; 2025 VertexBPMN™. Alle Rechte vorbehalten.</p>
-                <p>VertexBPMN™ ist eine nicht eingetragene Marke von Tainosoft UG.</p>
-            </div>
+          </div>
+          <div class="telemetry-row"><span><i></i> Logs</span><span><i></i> Traces</span><span><i></i> Metrics</span></div>
         </div>
-    </footer>
+      </div>
+    </section>
 
+    <section class="proof-strip" aria-label="Qualifizierungsübersicht">
+      <div class="container proof-grid">
+        <div><strong>BPMN 2.0</strong><span>persistente Runtime</span></div>
+        <div><strong>DMN 1.4</strong><span>FEEL, DRD &amp; Hit Policies</span></div>
+        <div><strong>CMMN 1.1</strong><span>Case Lifecycle &amp; Sentries</span></div>
+        <div><strong>51</strong><span>verbindliche Acceptance-Fälle</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="standards">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow dark"><span></span> Standards, die laufen</p>
+          <h2>Ein Modell ist erst unterstützt,<br>wenn es Ende-zu-Ende funktioniert.</h2>
+          <p>Supportaussagen basieren auf öffentlichen, persistenten Ausführungspfaden und verbindlichen Acceptance-Gates – nicht nur auf Parser- oder Unit-Tests.</p>
+        </div>
+        <div class="standard-grid">
+          <article class="standard-card">
+            <div class="card-kicker">01 · Orchestrierung</div>
+            <h3>BPMN 2.0</h3>
+            <p>Events, Tasks, Gateways, Subprozesse, Call Activities, Multi-Instance, Kompensation, Migration und Incident Recovery auf einer persistenten Runtime.</p>
+            <ul><li>Timer, Message, Signal, Error &amp; Escalation</li><li>Parallel, Inclusive, Event-based &amp; Complex Gateway</li><li>Replika-sichere Jobs, Inbox und Outbox</li></ul>
+          </article>
+          <article class="standard-card featured">
+            <div class="card-kicker">02 · Entscheidungen</div>
+            <h3>DMN 1.4</h3>
+            <p>Decision Tables, Literal Expressions, Decision Services und mehrstufige DRDs mit eingebetteter, reproduzierbarer FEEL-Laufzeit.</p>
+            <ul><li>Alle Decision-Table Hit Policies</li><li>Kontexte, Listen, Quantoren &amp; temporale Typen</li><li>BPMN BusinessRuleTask Integration</li></ul>
+          </article>
+          <article class="standard-card">
+            <div class="card-kicker">03 · Case Management</div>
+            <h3>CMMN 1.1</h3>
+            <p>Persistente Cases mit Plan Items, Case File, Sentries, Stages, Human Tasks, Discretionary Items und Wiederanlauf.</p>
+            <ul><li>REST, SDK, gRPC und MCP</li><li>Entry-/Exit-Sentries und User Events</li><li>Lifecycle- und History-Verträge</li></ul>
+          </article>
+        </div>
+        <p class="evidence-link">Die verbindlichen Grenzen und Nachweise stehen in der <a href="https://github.com/VertexBPMN/VertexBPMN/blob/master/docs/reference/product-support-matrix.md">Produkt-Support- und Acceptance-Matrix <span aria-hidden="true">↗</span></a>.</p>
+      </div>
+    </section>
+
+    <section class="section platform-section" id="platform">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow"><span></span> Eine Plattform, klare Grenzen</p><h2>Vom Modell bis<br>zum Betrieb.</h2></div>
+          <p>VertexBPMN bringt Modellierung, Ausführung, Integration und Betrieb in eine konsistente .NET-Architektur – offen, typisiert und automatisierbar.</p>
+        </div>
+        <div class="capability-grid">
+          <article><span class="cap-number">01</span><h3>Low-Code Studio</h3><p>BPMN-, DMN-, CMMN- und Form-Assets mit Import, Export, Properties, Simulation und sichtbaren Fehlerpfaden.</p></article>
+          <article><span class="cap-number">02</span><h3>APIs &amp; SDK</h3><p>REST, OpenAPI, gRPC, MCP und ein typisierter .NET-Client für Deployments, Instanzen, Tasks und Trigger.</p></article>
+          <article><span class="cap-number">03</span><h3>Persistente Runtime</h3><p>EF Core für SQLite, PostgreSQL und SQL Server mit Tokens, Jobs, Subscriptions, History, Incidents, Inbox und Outbox.</p></article>
+          <article><span class="cap-number">04</span><h3>CLI Control Plane</h3><p>Prozesse, Cases und Entscheidungen direkt im Terminal registrieren, ausführen und überwachen.</p></article>
+          <article><span class="cap-number">05</span><h3>Aspire AppHost</h3><p>API, Studio, PostgreSQL und RabbitMQ lokal orchestrieren – mit Readiness, Service Discovery und persistenten Volumes.</p></article>
+          <article><span class="cap-number">06</span><h3>Observability</h3><p>OpenTelemetry Logs, Traces und Metriken, Health-Probes, Correlation IDs sowie persistente Analytics und Process Mining.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quickstart" id="start">
+      <div class="container quickstart-grid">
+        <div class="quickstart-copy">
+          <p class="eyebrow dark"><span></span> In Minuten lokal</p>
+          <h2>Starten, beobachten,<br>automatisieren.</h2>
+          <p>Der Aspire AppHost startet die vollständige Entwicklungsumgebung. Für Integrationen steht das veröffentlichte .NET SDK auf NuGet bereit.</p>
+          <div class="quick-links">
+            <a href="https://github.com/VertexBPMN/VertexBPMN/wiki/Aspire-AppHost">Aspire-Anleitung <span aria-hidden="true">→</span></a>
+            <a href="https://www.nuget.org/packages/VertexBPMN.Sdk">SDK auf NuGet <span aria-hidden="true">→</span></a>
+            <a href="https://github.com/VertexBPMN/VertexBPMN/wiki">Vollständige Dokumentation <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+        <div class="terminal" aria-label="Quickstart-Befehle">
+          <div class="terminal-bar"><span></span><span></span><span></span><strong>PowerShell</strong></div>
+          <div class="terminal-body">
+            <p class="terminal-comment"># Repository klonen</p>
+            <p><span class="prompt">PS&gt;</span> git clone https://github.com/VertexBPMN/VertexBPMN.git</p>
+            <p><span class="prompt">PS&gt;</span> cd VertexBPMN</p>
+            <p class="terminal-comment"># API, Studio, PostgreSQL und RabbitMQ starten</p>
+            <p class="wrap"><span class="prompt">PS&gt;</span> dotnet run --project src/VertexBPMN.AppHost --no-launch-profile -e DOTNET_ENVIRONMENT=Development</p>
+            <p class="terminal-success">✓ Aspire Dashboard · resources healthy</p>
+            <p class="terminal-comment space-top"># Typisierten Client installieren</p>
+            <p><span class="prompt">PS&gt;</span> dotnet add package VertexBPMN.Sdk</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section open-source-section">
+      <div class="container open-source-card">
+        <div><p class="eyebrow"><span></span> Offen entwickelt</p><h2>Prozessautomatisierung gehört<br>in Ihr .NET-Ökosystem.</h2><p>Quellcode, Supportmatrix, Architektur, Tests und Release-Gates sind öffentlich nachvollziehbar. Beiträge und fundiertes Feedback sind willkommen.</p></div>
+        <div class="open-source-actions"><a class="button button-primary" href="https://github.com/VertexBPMN/VertexBPMN">Repository öffnen</a><a class="button button-secondary" href="https://github.com/VertexBPMN/VertexBPMN/issues">Issue erstellen</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand"><a class="brand light" href="#top"><img src="assets/logo.png" alt="" width="38" height="38"><span>Vertex<span>BPMN</span></span></a><p>Native Prozessautomatisierung für modernes .NET.</p></div>
+      <div><strong>Produkt</strong><a href="#standards">Standards</a><a href="#platform">Plattform</a><a href="#start">Quickstart</a></div>
+      <div><strong>Ressourcen</strong><a href="https://github.com/VertexBPMN/VertexBPMN/wiki">Wiki</a><a href="https://github.com/VertexBPMN/VertexBPMN">GitHub</a><a href="https://www.nuget.org/packages/VertexBPMN.Sdk">NuGet SDK</a></div>
+      <div><strong>Rechtliches</strong><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="https://github.com/VertexBPMN/VertexBPMN/blob/master/LICENSE">Lizenz</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 VertexBPMN™</span><span>Ein Open-Source-Projekt der Tainosoft UG.</span></div>
+  </footer>
 </body>
 </html>
