@@ -28,6 +28,7 @@
       <nav class="site-nav" aria-label="Hauptnavigation">
         <a href="#standards">Standards</a>
         <a href="#platform">Plattform</a>
+        <a href="#cli">CLI</a>
         <a href="#start">Quickstart</a>
         <a href="https://github.com/VertexBPMN/VertexBPMN/wiki">Dokumentation</a>
       </nav>
@@ -142,6 +143,38 @@
       </div>
     </section>
 
+    <section class="section cli-section" id="cli">
+      <div class="container cli-grid">
+        <div class="cli-copy">
+          <p class="eyebrow dark"><span></span> Terminal-first Control Plane</p>
+          <h2>Die Engine.<br>Direkt in Ihrer Shell.</h2>
+          <p>Die VertexBPMN CLI führt BPMN-, DMN- und CMMN-Workloads lokal aus, verwaltet persistente Konfiguration und Workflow-Trigger und startet bei Bedarf API und Studio.</p>
+          <div class="cli-modes">
+            <div><strong>Interaktiv</strong><span>REPL mit History für Entwicklung und Exploration.</span></div>
+            <div><strong>One-shot</strong><span>Einzelne Befehle für Skripte und Automatisierung.</span></div>
+            <div><strong>Dashboard</strong><span>API und Studio starten und im Browser öffnen.</span></div>
+          </div>
+          <a class="text-link" href="https://github.com/VertexBPMN/VertexBPMN/blob/master/src/VertexBPMN.Cli/README.md">CLI-Dokumentation auf GitHub <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="cli-console" aria-label="Beispiele für die VertexBPMN CLI">
+          <div class="cli-console-tabs"><span class="active">Interaktiv</span><span>One-shot</span></div>
+          <div class="cli-console-body">
+            <p><span class="shell-prompt">PS&gt;</span> dotnet run --project src/VertexBPMN.Cli</p>
+            <p class="console-muted">VertexBPMN CLI · interactive mode</p>
+            <p><span class="vertex-prompt">vertexbpmn&gt;</span> validate models/order.bpmn</p>
+            <p class="console-ok">BPMN model is valid.</p>
+            <p><span class="vertex-prompt">vertexbpmn&gt;</span> deploy-bpmn models/order.bpmn acme</p>
+            <p><span class="vertex-prompt">vertexbpmn&gt;</span> trigger create "Order webhook" order-process acme</p>
+            <p><span class="vertex-prompt">vertexbpmn&gt;</span> status</p>
+            <p class="console-muted">Workers: 2, pending tokens: 0, pending case tokens: 0</p>
+            <p><span class="vertex-prompt">vertexbpmn&gt;</span> dashboard</p>
+            <p class="console-ok">Dashboard: http://localhost:5263/</p>
+          </div>
+          <div class="cli-command-list"><span>validate</span><span>test-run</span><span>deploy</span><span>execute</span><span>trigger</span><span>config</span><span>connectors</span><span>n8n import</span></div>
+        </div>
+      </div>
+    </section>
+
     <section class="section quickstart" id="start">
       <div class="container quickstart-grid">
         <div class="quickstart-copy">
@@ -181,7 +214,7 @@
   <footer>
     <div class="container footer-grid">
       <div class="footer-brand"><a class="brand light" href="#top"><img src="assets/logo.png" alt="" width="38" height="38"><span>Vertex<span>BPMN</span></span></a><p>Native Prozessautomatisierung für modernes .NET.</p></div>
-      <div><strong>Produkt</strong><a href="#standards">Standards</a><a href="#platform">Plattform</a><a href="#start">Quickstart</a></div>
+      <div><strong>Produkt</strong><a href="#standards">Standards</a><a href="#platform">Plattform</a><a href="#cli">CLI</a><a href="#start">Quickstart</a></div>
       <div><strong>Ressourcen</strong><a href="https://github.com/VertexBPMN/VertexBPMN/wiki">Wiki</a><a href="https://github.com/VertexBPMN/VertexBPMN">GitHub</a><a href="https://www.nuget.org/packages/VertexBPMN.Sdk">NuGet SDK</a></div>
       <div><strong>Rechtliches</strong><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="https://github.com/VertexBPMN/VertexBPMN/blob/master/LICENSE">Lizenz</a></div>
     </div>
