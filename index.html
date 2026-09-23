@@ -28,6 +28,7 @@
       <nav class="site-nav" aria-label="Hauptnavigation">
         <a href="#standards">Standards</a>
         <a href="#platform">Plattform</a>
+        <a href="#ai">KI</a>
         <a href="#deployment">Azure</a>
         <a href="#cli">CLI</a>
         <a href="#start">Quickstart</a>
@@ -141,6 +142,21 @@
           <article><span class="cap-number">05</span><h3>Aspire AppHost</h3><p>API, Studio, PostgreSQL und RabbitMQ lokal orchestrieren – mit Readiness, Service Discovery und persistenten Volumes.</p></article>
           <article><span class="cap-number">06</span><h3>Observability</h3><p>OpenTelemetry Logs, Traces und Metriken, Health-Probes, Correlation IDs sowie persistente Analytics und Process Mining.</p></article>
         </div>
+      </div>
+    </section>
+
+    <section class="section platform-section" id="ai">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow"><span></span> KI als Prozessintegration</p><h2>KI einsetzen.<br>Kontrolle behalten.</h2></div>
+          <p>KI-Aufrufe werden als explizite Prozessschritte oder externe Agent-Tasks eingebunden. Das BPMN-Modell behält die Kontrolle über Reihenfolge, Grenzen und menschliche Freigaben.</p>
+        </div>
+        <div class="capability-grid">
+          <article><span class="cap-number">01</span><h3>AI-Service-Tasks</h3><p>Providerpfade für OpenAI, Anthropic und Google Gemini. Prompts und ausgewählte Prozessvariablen können an den konfigurierten Anbieter gesendet werden.</p></article>
+          <article><span class="cap-number">02</span><h3>MCP für Agenten</h3><p>MCP verbindet kompatible KI-Clients mit BPMN-Funktionen. Service Tasks können außerdem konfigurierte MCP-Endpunkte aufrufen.</p></article>
+          <article><span class="cap-number">03</span><h3>Lokaler Ollama-Worker</h3><p>Ein begrenzter Contract-Review-Agent kann lokal über Ollama laufen. Er ist standardmäßig deaktiviert; ein Mensch trifft die abschließende Entscheidung.</p></article>
+        </div>
+        <p class="evidence-link">Generische AI-Handler-Aliase sind derzeit Platzhalter, keine produktiven Provideradapter. Das Studio enthält keinen eingebauten KI-Chat-Assistenten. <a href="https://github.com/VertexBPMN/VertexBPMN/wiki/KI-Integration">KI-Funktionen und Grenzen dokumentiert ansehen <span aria-hidden="true">↗</span></a></p>
       </div>
     </section>
 
