@@ -113,6 +113,7 @@ img { max-width: 100%; }
 .capability-grid article:hover { background: rgba(255,255,255,.045); }
 .cap-number { color: var(--green); font-size: .7rem; font-weight: 800; }
 .capability-grid h3 { margin: 38px 0 12px; font-size: 1.23rem; }.capability-grid p { margin: 0; color: #9fb0c4; font-size: .9rem; }
+.platform-section .section-note { margin: 28px 0 0; color: #9fb0c4; font-size: .88rem; }
 
 .cli-section { background: #edf3f8; }
 .cli-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
