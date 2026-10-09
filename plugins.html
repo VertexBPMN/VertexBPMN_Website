@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plug-ins · VertexBPMN</title>
+  <meta name="description" content="Plug-ins und optionale Erweiterungen für VertexBPMN: Git-Versionierung von BPMN-Modellen, GitHub-Pull-Requests, Einrichtung und aktueller Funktionsumfang.">
+  <meta name="theme-color" content="#071a33">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Plug-ins · VertexBPMN">
+  <meta property="og:description" content="BPMN-Modelle mit Git versionieren und über GitHub-Pull-Requests gemeinsam weiterentwickeln.">
+  <meta property="og:image" content="https://vertexbpmn.com/assets/Hauptlogo.png">
+  <meta property="og:url" content="https://vertexbpmn.com/plugins.html">
+  <link rel="canonical" href="https://vertexbpmn.com/plugins.html">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html#top" aria-label="VertexBPMN Startseite">
+        <img src="assets/logo.png" alt="" width="44" height="44">
+        <span>Vertex<span>BPMN</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="index.html#standards">Standards</a>
+        <a href="index.html#platform">Plattform</a>
+        <a href="index.html#ai">KI</a>
+        <a href="index.html#deployment">Azure</a>
+        <a href="plugins.html" aria-current="page">Plug-ins</a>
+        <a href="index.html#cli">CLI</a>
+        <a href="index.html#start">Quickstart</a>
+        <a href="https://github.com/VertexBPMN/VertexBPMN/wiki">Dokumentation</a>
+      </nav>
+      <a class="button button-small button-ghost" href="https://github.com/VertexBPMN/VertexBPMN">GitHub</a>
+    </div>
+  </header>
+
+  <main id="main" class="plugins-page">
+    <section class="hero">
+      <div class="container plugin-intro">
+        <p class="eyebrow"><span></span> Optionale Erweiterungen</p>
+        <h1>Plug-ins für<br><strong>Ihre Prozesse.</strong></h1>
+        <p class="hero-lead">Hier finden Sie die Erweiterungen für VertexBPMN mit ihrem Zweck, ihren Voraussetzungen und ihrem aktuellen Funktionsumfang. Der Katalog wächst mit jedem weiteren dokumentierten Plug-in.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#git-plugin">Git-Plugin entdecken <span aria-hidden="true">↓</span></a>
+          <a class="button button-secondary" href="https://github.com/VertexBPMN/VertexBPMN/wiki/Plug-ins">Plug-in-Dokumentation</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow dark"><span></span> Plug-in-Katalog</p>
+          <h2>Die passende Erweiterung.</h2>
+          <p>Jeder Eintrag beschreibt eine konkrete Integration. Einrichtung, Berechtigungen und Abnahmegrenzen finden Sie in der zugehörigen Wiki-Anleitung.</p>
+        </div>
+        <div class="plugin-catalog">
+          <article class="standard-card">
+            <div class="card-kicker">01 · Modellversionierung</div>
+            <h3><a href="#git-plugin">Git-Plugin</a></h3>
+            <p>BPMN-Modelle im Studio aus Git öffnen, Änderungen nachvollziehen und über GitHub-Pull-Requests zusammenarbeiten.</p>
+            <ul><li>Vergleich, Historie, Commit und Push</li><li>PR-Erstellung und aktueller GitHub-Status</li><li>Optional aktivierbar · vollständige Abnahme offen</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section platform-section" id="git-plugin">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow"><span></span> Git-Plugin</p><h2>Vom Editor<br>zum Pull Request.</h2></div>
+          <p>Der Git-Arbeitsbereich ist direkt in den BPMN-Editor integriert. Repositorybindungen, freigegebene Modellverzeichnisse und explizite Berechtigungen legen fest, wer welche Modelle bearbeiten darf.</p>
+        </div>
+        <div class="capability-grid">
+          <article><span class="cap-number">01</span><h3>Öffnen und vergleichen</h3><p>Repository und Branch auswählen, eine BPMN-Datei aus einem konkreten Commit laden und im vorhandenen Editor bearbeiten. Vergleich und Git-Historie machen Änderungen nachvollziehbar.</p></article>
+          <article><span class="cap-number">02</span><h3>Commit und Push</h3><p>Den bestätigten Editorstand mit einer Nachricht auf einem Arbeitsbranch committen. Anschließend genau diesen Commit pushen. Persistente Aufträge zeigen den Fortschritt und das Ergebnis.</p></article>
+          <article><span class="cap-number">03</span><h3>Pull Requests verfolgen</h3><p>Aus einem bestätigten Push einen GitHub-PR erstellen. Gespeicherte PR-Belege wieder öffnen und den aktuellen Zustand, tatsächlichen Mergecommit und die Reviewhistorie gesondert abfragen.</p></article>
+        </div>
+        <p class="evidence-link">Die Git-Oberfläche ist derzeit auf BPMN-Dateien ausgerichtet. Ein angezeigtes Review oder ein Merge ist keine Deploymentfreigabe; der Arbeitsbereich führt keinen automatischen Merge oder Runtime-Deploymentablauf aus.</p>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="container plugin-documentation">
+        <div class="section-heading">
+          <p class="eyebrow dark"><span></span> So arbeiten Sie damit</p>
+          <h2>Ein klarer Ablauf.</h2>
+        </div>
+        <ol class="plugin-steps">
+          <li><strong>Verbinden:</strong> Im BPMN-Editor „Git model workspace“ öffnen, Repository, Branch und Modellverzeichnis auswählen.</li>
+          <li><strong>Bearbeiten:</strong> Die Datei mit „Open in existing BPMN editor“ laden. Änderungen vornehmen, Snapshot vergleichen und Historie prüfen.</li>
+          <li><strong>Versionieren:</strong> Commit-Nachricht eingeben und den bestätigten Editorstand committen. Auf den erfolgreichen Auftragsstatus warten, dann den bestätigten Commit pushen.</li>
+          <li><strong>Zusammenarbeiten:</strong> Zielbranch, Titel und Beschreibung wählen und einen Pull Request erstellen. Den PR auf GitHub prüfen und seinen aktuellen Status im Studio abfragen.</li>
+        </ol>
+        <p>Das Beenden des Wartens im Studio stoppt bereits angenommene Aufträge nicht. Ein gespeicherter eigener PR-Beleg lässt sich nach einem Neustart über seine Operation-ID wieder öffnen.</p>
+        <div class="quick-links">
+          <a href="https://github.com/VertexBPMN/VertexBPMN/wiki/Git-Plugin">Vollständige Git-Anleitung <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="setup">
+      <div class="container plugin-documentation">
+        <div class="section-heading">
+          <p class="eyebrow dark"><span></span> Einrichtung und Status</p>
+          <h2>Gezielt aktivieren.<br>Rechte bewusst vergeben.</h2>
+        </div>
+        <h3>Voraussetzungen</h3>
+        <p>Die Integration ist standardmäßig deaktiviert. Sie benötigt Git auf dem API-Host, ein geschütztes Workspace-Verzeichnis, explizite HTTPS-Hostfreigaben sowie passende Keycloak- und GitHub-App-Credentials. Die aktuelle Remote-Integration verwendet GitHub. Rollen und Repository-Grants werden serverseitig und tenantbezogen geprüft.</p>
+        <p>Das Git-Plugin ist eine integrierte Source-Control-Erweiterung und benötigt keine separat hochzuladende Plugin-DLL. Die Einrichtung erfolgt über <code>SourceControl</code>. Mit <code>SourceControl:Enabled=false</code> lässt sich die Integration deaktivieren und im Studio ausblenden; gespeicherte Daten werden nicht gelöscht.</p>
+        <h3>Aktueller Abnahmestatus</h3>
+        <p>Ausgewählte lokale Prüfungen und sichtbare Abläufe in einem isolierten GitHub-Testrepository sind dokumentiert: darunter PR-Erstellung, Wiederöffnung gespeicherter Belege und Live-Mergeabfrage. Die Reviewhistorie ist implementiert und durch Adaptertests geprüft; ihre sichtbare Studio-Abnahme ist noch offen.</p>
+        <p>Die vollständige Git-Abnahme bleibt offen, insbesondere für unabhängige Audit-/Reviewverifikation, reale verlorene Antworten und Rechteentzugsfälle sowie vollständige automatisierte HTTP-/UI-Regression und strengen Gesamtbuild. Daraus wird keine Produktionsfreigabe abgeleitet. Dokumentationsstand: 9. Oktober 2026.</p>
+        <div class="quick-links">
+          <a href="https://github.com/VertexBPMN/VertexBPMN/wiki/Git-Plugin">Konfiguration, Berechtigungen und Fehlerbehandlung <span aria-hidden="true">→</span></a>
+          <a href="https://github.com/VertexBPMN/VertexBPMN/blob/master/docs/reviews/2026-10-08_Git-G07_PR-Antwortvalidierung.md">Implementierung und dokumentierte Abnahmen <span aria-hidden="true">→</span></a>
+          <a href="https://github.com/VertexBPMN/VertexBPMN/wiki/Plug-ins">Katalog für weitere Plug-ins <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand"><a class="brand light" href="index.html#top"><img src="assets/logo.png" alt="" width="38" height="38"><span>Vertex<span>BPMN</span></span></a><p>Native Prozessautomatisierung für modernes .NET.</p></div>
+      <div><strong>Produkt</strong><a href="index.html#standards">Standards</a><a href="index.html#platform">Plattform</a><a href="plugins.html">Plug-ins</a>
+        <a href="index.html#cli">CLI</a><a href="index.html#start">Quickstart</a></div>
+      <div><strong>Ressourcen</strong><a href="https://github.com/VertexBPMN/VertexBPMN/wiki">Wiki</a><a href="https://github.com/VertexBPMN/VertexBPMN">GitHub</a><a href="https://www.nuget.org/packages/VertexBPMN.Sdk">NuGet SDK</a></div>
+      <div><strong>Rechtliches</strong><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="https://github.com/VertexBPMN/VertexBPMN/blob/master/LICENSE">Lizenz</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 VertexBPMN™</span><span>Ein Open-Source-Projekt der Tainosoft UG.</span></div>
+  </footer>
+</body>
+</html>

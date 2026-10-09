@@ -185,3 +185,18 @@ footer { padding: 70px 0 24px; color: #a8bacd; background: #04101f; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; }
 }
+
+/* Plug-in catalogue and documentation use the shared site design. */
+.plugin-intro { max-width: 960px; }
+.plugin-catalog { max-width: 620px; }
+.plugin-catalog .standard-card { min-height: auto; }
+.plugin-catalog .standard-card ul { margin-top: 20px; }
+.plugin-documentation { max-width: 900px; }
+.plugin-steps { padding-left: 24px; }
+.plugin-steps li { padding-left: 8px; margin-bottom: 18px; }
+.plugins-page code { overflow-wrap: anywhere; }
+.plugins-page section[id] { scroll-margin-top: 90px; }
+.site-nav a[aria-current="page"] { color: var(--green-soft); }
+@media (min-width: 981px) {
+  .site-nav { gap: 20px; }
+}
