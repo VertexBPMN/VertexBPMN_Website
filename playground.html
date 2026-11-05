@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VertexBPMN Playground</title>
+  <meta name="description" content="VertexBPMN in einer isolierten, geführten Demo ausprobieren.">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="VertexBPMN Startseite">
+        <img src="assets/logo.png" alt="" width="44" height="44">
+        <span>Vertex<span>BPMN</span></span>
+      </a>
+      <nav class="site-nav" aria-label="Hauptnavigation">
+        <a href="index.html#platform">Plattform</a>
+        <a href="index.html#start">Quickstart</a>
+        <a href="https://github.com/VertexBPMN/VertexBPMN/wiki">Dokumentation</a>
+      </nav>
+      <a class="button button-small button-ghost" href="index.html">Zur Startseite</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-copy">
+        <p class="eyebrow"><span></span> Geführte Demo · isolierte Runtime</p>
+        <h1>VertexBPMN<br><strong>ausprobieren.</strong></h1>
+        <p class="hero-lead">Starte einen Beispielprozess, bearbeite die persönliche Aufgabe und beobachte den persistenten Laufzeitstatus.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://playground.vertexbpmn.com">Demo öffnen <span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href="https://github.com/VertexBPMN/VertexBPMN/wiki/Low-Code-Anwendungsplattform">Ablauf dokumentiert</a>
+        </div>
+        <p class="evidence-link">Der Playground verwendet einen separaten Demo-Tenant. Keine Produktionsdaten, keine echten Connector-Secrets und keine dauerhafte Speicherung persönlicher Eingaben.</p>
+      </div>
+    </section>
+
+    <section class="section" id="flow">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow dark"><span></span> In drei Schritten</p>
+          <h2>Vom Prozessstart<br>bis zum Abschluss.</h2>
+        </div>
+        <div class="standard-grid">
+          <article class="standard-card"><div class="card-kicker">01 · Start</div><h3>Beispielprozess starten</h3><p>Ein veröffentlichter Low-Code-Startpunkt erzeugt eine persistente Prozessinstanz.</p></article>
+          <article class="standard-card featured"><div class="card-kicker">02 · Aufgabe</div><h3>Aufgabe bearbeiten</h3><p>Die persönliche Inbox zeigt die User Task. Claim und Completion laufen über das Portal-BFF.</p></article>
+          <article class="standard-card"><div class="card-kicker">03 · Nachweis</div><h3>Status beobachten</h3><p>Release-Bindung, Status und Abschluss werden aus der Runtime zurückgelesen.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section platform-section">
+      <div class="container">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow"><span></span> Sicherheitsgrenzen</p><h2>Demo, nicht<br>Produktionssystem.</h2></div>
+          <p>Die öffentliche Demo bleibt absichtlich begrenzt: Rate-Limits, kurzlebige Sessions, tenantisolierte Daten und ein automatischer Reset verhindern, dass der Playground zu einer offenen Prozessplattform wird.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
